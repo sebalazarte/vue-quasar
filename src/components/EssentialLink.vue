@@ -53,11 +53,9 @@ export default defineComponent({
     return{
       navigateTo(){
 
-        if(props.link.startsWith('http')){
-          window.open(props.link,'_blank');
-        }else {
-          router.push({name: props.link})
-        }
+      props.link.startsWith('http')
+          ? window.open(props.link,'_blank')
+          : router.push({name: props.link})
       }
     }
   }
